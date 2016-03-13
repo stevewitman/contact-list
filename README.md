@@ -1,3 +1,9 @@
+Build an App With AngularJS & Firebase - Brad Traversy
+https://www.youtube.com/watch?v=wkhClyW5uMc
+https://contactlist-sw.firebaseio.com/
+
+
+
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
