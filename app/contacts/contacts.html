@@ -1,5 +1,6 @@
 <div class="row" ng-controller="ContactsCtrl">
-  <div class="col-md-5">
+
+  <div class="col-md-5" ng-show="addFormShow">
     <h3>Add Contact</h3>
     <form ng-submit="addContact()">
       <div class="form-group">
@@ -17,6 +18,26 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
+
+  <div class="col-md-5" ng-show="editFormShow">
+    <h3>Edit Contact</h3>
+    <form ng-submit="editContact()">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" ng-model="name" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" ng-model="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" ng-model="phone" placeholder="Phone">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+
   <div class="col-md-7">
     <h3>Contacts</h3>
     <table class="table table-striped">
@@ -33,7 +54,10 @@
           <td>{{contact.name}}</td>
           <td>{{contact.email}}</td>
           <td>{{contact.phone}}</td>
-          <td><a class="btn btn-danger btn-xs" ng-click="removeContact(contact)">X</a></td>
+          <td>
+            <a class="btn btn-default btn-xs" ng-click="showEditForm(contact)">Edit</a>
+            <a class="btn btn-danger btn-xs" ng-click="removeContact(contact)">Remove</a>
+          </td>
         </tr>
       </tbody>
     </table>
