@@ -15,6 +15,17 @@ angular.module('myApp.contacts', ['ngRoute'])
   $scope.contacts = $firebaseArray(ref);
 
   $scope.addContact = function() {
-    console.log('adding contact')
+    $scope.contacts.$add({
+      name: $scope.name,
+      email: $scope.email,
+      phone: $scope.phone
+    }).then(function(ref) {
+      var id = ref.key();
+      console.log('Added Contact ' + id);
+
+      $scope.name = '';
+      $scope.email = '';
+      $scope.phone = '';
+    });
   }
 }]);
