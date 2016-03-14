@@ -21,10 +21,15 @@ angular.module('myApp.contacts', ['ngRoute'])
       phone: $scope.phone
     }).then(function(ref) {
       var id = ref.key();
-
       $scope.name = '';
       $scope.email = '';
       $scope.phone = '';
     });
   }
+
+  $scope.removeContact = function(contact) {
+    $scope.contacts.$remove(contact)
+  }
+
+
 }]);
