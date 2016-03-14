@@ -3,7 +3,7 @@
 angular.module('myApp.contacts', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/contacts', {
+  $routeProvider.when('/', {
     templateUrl: 'contacts/contacts.html',
     controller: 'ContactsCtrl'
   });
@@ -21,7 +21,6 @@ angular.module('myApp.contacts', ['ngRoute'])
       phone: $scope.phone
     }).then(function(ref) {
       var id = ref.key();
-      console.log('Added Contact ' + id);
 
       $scope.name = '';
       $scope.email = '';
